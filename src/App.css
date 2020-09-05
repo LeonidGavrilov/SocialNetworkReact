@@ -12,15 +12,15 @@
 
 .header {
   grid-area: h;
-  background-color: green;
+  background-color: rgb(255, 255, 255);
 }
 .header img {
-  width: 20px;
+  width: 60px;
+  height: 60px;
 }
-
 .nav {
   grid-area: n;
-  background-color: greenyellow;
+  background-color: rgb(222, 224, 219);
 }
 
 .content {
