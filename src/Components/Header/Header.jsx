@@ -4,7 +4,7 @@ import s from './Header.module.css';
 const Header = () => {
     return (
         <header className={s.header}>
-            <img src={require('../logo_my.jpg')} />
+            <img src={require('../../logo_my.jpg')} />
         </header>
     );
 }
