@@ -6,3 +6,7 @@
   height: 50px;
   border-radius: 50px;
 }
+.item .it img {
+  width: 20px;
+  height: 20px;
+}
