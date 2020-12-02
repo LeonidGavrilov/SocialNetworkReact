@@ -2,13 +2,13 @@ import React from 'react';
 import { useState } from 'react';
 import s from './Post.module.css';
 
-const Post = (props) => {
+const Posts = (props) => {
     const [clicked, setClicked] = useState(false);
     const like = require('./heart-icon.png');
     const disLike = require('./diHeart-icon.png');
     return (
         <div className={s.item}>
-            <img src='https://boombo.pro/uploads/posts/2019-06/1559819674_72e3597bb2bdc4d2e19a08429db4c34a.jpg' />
+            <img src='https://i.artfile.ru/2880x1800_1491443_%5Bwww.ArtFile.ru%5D.jpg' />
                 {props.message}
             <div className={s.it}>
                 <img src = {clicked ? like : disLike} onClick={() => setClicked(prev => !prev)} />
@@ -18,4 +18,4 @@ const Post = (props) => {
     );
 }
 
-export default Post;
+export default Posts;

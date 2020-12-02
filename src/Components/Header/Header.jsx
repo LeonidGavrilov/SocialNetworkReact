@@ -1,10 +1,13 @@
 import React from 'react';
 import s from './Header.module.css';
+import {NavLink} from "react-router-dom";
 
 const Header = () => {
     return (
         <header className={s.header}>
-            <img src={require('../../logo_my.jpg')} />
+            <NavLink to={'/profile'}>
+                <img src={require('../../logo_my.jpg')} />
+            </NavLink>
         </header>
     );
 }
