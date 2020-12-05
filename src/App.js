@@ -23,7 +23,7 @@ const App = (props) => {
 
                     <Route path={'/messages'}
                            render={() => <Messages
-                               state={props.state.messagePage}/>}/>
+                               store={props.store}/>}/>
 
                     <Route path={'/news'} render={() => <News/>}/>
                     <Route path={'/music'} render={() => <Music/>}/>
