@@ -4,10 +4,10 @@ import './App.css';
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
 import Profile from './Components/Profile/Profile';
-import Messages from "./Components/Dialogs/Messages";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
+import MessagesContainer from "./Components/Dialogs/MessagesContainer";
 
 const App = (props) => {
     return (
@@ -17,13 +17,10 @@ const App = (props) => {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Route path={'/profile'}
-                           render={() => <Profile
-                               profilePage={props.state.profilePage}
-                               dispatch={props.dispatch}/>}/>
+                           render={() => <Profile store = {props.store} />}/>
 
                     <Route path={'/messages'}
-                           render={() => <Messages
-                               store={props.store}/>}/>
+                           render={() => <MessagesContainer store = {props.store} />}/>
 
                     <Route path={'/news'} render={() => <News/>}/>
                     <Route path={'/music'} render={() => <Music/>}/>
