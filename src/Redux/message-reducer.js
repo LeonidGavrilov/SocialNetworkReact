@@ -1,3 +1,5 @@
+import {cloneDeep} from "lodash";
+
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
 const SEND_MESSAGE = 'SEND_MESSAGE';
 
@@ -23,14 +25,18 @@ let initialState = {
 
 const messageReducer = (state = initialState, action) => {
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE_BODY:
-            state.newMessageBody = action.body;
-            return state;
-        case SEND_MESSAGE:
-            let body = state.newMessageBody;
-            state.newMessageBody = '';
-            state.messages.push({id: 7, message: body});
-            return state;
+        case UPDATE_NEW_MESSAGE_BODY: {
+            let stateDeep = cloneDeep(state);
+            stateDeep.newMessageBody = action.body;
+            return stateDeep;
+        }
+        case SEND_MESSAGE: {
+            let stateDeep = cloneDeep(state);
+            let body = stateDeep.newMessageBody;
+            stateDeep.newMessageBody = '';
+            stateDeep.messages.push({id: 7, message: body});
+            return stateDeep;
+        }
         default:
             return state;
     }
