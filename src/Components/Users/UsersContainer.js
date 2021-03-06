@@ -10,8 +10,6 @@ import {
     unfollow
 } from "../../Redux/users-reducer";
 import Users from "./Users";
-import styles from "./users.module.css";
-import preloader from "../../assets/images/preloader.gif";
 import Preloader from "../common/Preloader/Preloader";
 
 

@@ -3,12 +3,12 @@ import {Route, BrowserRouter} from "react-router-dom";
 import './App.css';
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
-import Profile from './Components/Profile/Profile';
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
 import MessagesContainer from "./Components/Dialogs/MessagesContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
+import ProfileContainer from "./Components/Profile/ProfileContainer";
 
 const App = (props) => {
     return (
@@ -18,7 +18,7 @@ const App = (props) => {
                 <Navbar/>
                 <div className='app-wrapper-content'>
                     <Route path={'/profile'}
-                           render={() => <Profile/>}/>
+                           render={() => <ProfileContainer/>}/>
 
                     <Route path={'/messages'}
                            render={() => <MessagesContainer/>}/>
