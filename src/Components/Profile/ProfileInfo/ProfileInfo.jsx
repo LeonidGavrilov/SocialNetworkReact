@@ -6,18 +6,17 @@ const ProfileInfo = (props) => {
     if (!props.profile) {
         return <Preloader/>
     }
-    debugger
     return (
         <div>
             <div>
-                <img src='http://st-gdefon.gallery.world/wallpapers_medium/233686_gallery.world.jpg'/>
+                <img src='http://st-gdefon.gallery.world/wallpapers_medium/233686_gallery.world.jpg' alt={""}/>
             </div>
             <div className={s.descriptionBlock}>
                 {
                     props.profile?.photos?.large
-                    && <img src={props.profile.photos.large}/>
+                    && <img src={props.profile.photos.large} alt={""}/>
                 }
-                <span>{props.profile.user.fullName}</span>
+                {/*<span>{props.profile.user.fullName}</span>*/}
 
                 ava+description
             </div>

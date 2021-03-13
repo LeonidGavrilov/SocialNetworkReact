@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import {useState} from 'react';
 import s from './Post.module.css';
 
 const Posts = (props) => {
@@ -8,10 +8,10 @@ const Posts = (props) => {
     const disLike = require('./diHeart-icon.png');
     return (
         <div className={s.item}>
-            <img src='https://i.artfile.ru/2880x1800_1491443_%5Bwww.ArtFile.ru%5D.jpg' />
-                {props.message}
+            <img src='https://i.artfile.ru/2880x1800_1491443_%5Bwww.ArtFile.ru%5D.jpg' alt={""}/>
+            {props.message}
             <div className={s.it}>
-                <img src = {clicked ? like : disLike} onClick={() => setClicked(prev => !prev)} />
+                <img src={clicked ? like : disLike} onClick={() => setClicked(prev => !prev)} alt={""}/>
                 {props.likesCount}
             </div>
         </div>
