@@ -13,7 +13,7 @@ class ProfileContainer extends React.Component {
             userId = 2;
         }
         profileAPI.gitProfile(userId).then(data => {
-            this.props.setUsersProfile(data.user);
+            this.props.setUsersProfile(data);
         });
     }
 
