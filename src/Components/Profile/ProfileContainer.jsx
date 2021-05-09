@@ -4,6 +4,7 @@ import axios from "axios";
 import {connect} from "react-redux";
 import {setUsersProfile} from "../../Redux/profile-reducer";
 import {withRouter} from "react-router-dom";
+import {profileAPI} from "../Api/Api";
 
 class ProfileContainer extends React.Component {
     componentDidMount() {
@@ -11,11 +12,9 @@ class ProfileContainer extends React.Component {
         if (!userId) {
             userId = 2;
         }
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + userId)
-            // axios.get(`http://localhost:3001/profile/` + userId)
-            .then(response => {
-                this.props.setUsersProfile(response.data.user);
-            });
+        profileAPI.gitProfile(userId).then(data => {
+            this.props.setUsersProfile(data.user);
+        });
     }
 
     render() {

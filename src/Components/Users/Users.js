@@ -3,6 +3,7 @@ import userPhoto from "../../assets/images/user.png";
 import React from "react";
 import {NavLink} from "react-router-dom";
 import axios from "axios";
+import {followAPI} from "../Api/Api";
 
 const Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -33,34 +34,18 @@ const Users = (props) => {
                             <div>
                                 {u.followed
                                     ? <button onClick={() => {
-                                        axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                                            withCredentials: true,
-                                            headers: {
-                                                // 'Access-Control-Allow-Origin': '*',
-                                                'API-KEY': '3f9d1af1-7f48-40b9-97f9-18e3de6e5535'
-                                            }
-                                        })
-                                            .then(response => {
-                                                if (response.data.resultCode == 0) {
+                                        followAPI.getUnFollow(u.id).then(data => {
+                                                if (data.resultCode == 0) {
                                                     props.unfollow(u.id);
                                                 }
                                             });
-
                                     }}>Unfollow</button>
                                     : <button onClick={() => {
-                                        axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
-                                            withCredentials: true,
-                                            headers: {
-                                                // 'Access-Control-Allow-Origin': '*',
-                                                'API-KEY': '3f9d1af1-7f48-40b9-97f9-18e3de6e5535'
-                                            }
-                                        })
-                                            .then(response => {
-                                                if (response.data.resultCode == 0) {
+                                        followAPI.getFollow(u.id).then(data => {
+                                                if (data.resultCode == 0) {
                                                     props.follow(u.id);
                                                 }
                                             });
-
                                     }}>Follow</button>
                                 }
                                     </div>
